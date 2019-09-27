@@ -7,8 +7,8 @@
 
   <title>Interactive App</title>
 
-  <meta name="description" content="Interactive app">
-  <meta name="author" content="Denise Case">
+  <meta name="description" content="Interactive Timer">
+  <meta name="author" content="Jacob Taylor">
 
   <!-- get current Bootstrap Material Design styles from https://mdbootstrap.com/md-bootstrap-cdn/ -->
 
@@ -25,6 +25,16 @@
     .sticky-footer-wrapper {
       min-height: 100vh;
     }
+
+    .results{
+      left: 50%;
+      bottom: 0;
+      padding: 0;
+      margin: 0;
+      position: absolute;
+      transform: translateX(-50%);
+    }
+
   </style>
 
 </head>
@@ -41,7 +51,7 @@
       <!--Rows have columns - column 1 (7/12) -->
       <div class="col-md-7 mb-4">
 
-        <h2>Interactive app!</h2>
+        <h2>Interactive Timer!</h2>
         <hr>
 
         <fieldset class="mt-4">
@@ -61,6 +71,21 @@
           <span id="secondWarning" class="text-danger"></span>
         </fieldset>
 
+        <fieldset class="mt-4">
+          <label for="thirdnumber">Enter third number (1 to 100):</label>
+          <input id="thirdNumber" type="number" min="1" max="100" value="12">
+          <span id="thirdWarning" class="text-danger"></span>
+        </fieldset>
+        <div class='col-md-5 mb-4'>
+          <hr>
+            <a href='#' style="float:left;" class='btn btn-success' onClick='stopwatch.start();'>Start</a>
+            <a href='#' style="float:none;" class='btn btn-primary' onClick='stopwatch.stop();'>Stop</a>
+            <a href='#' style="float:right;" class='btn btn-indigo' onClick='stopwatch.reset();'>Reset</a>
+          <hr>
+        </div>
+
+        <div class='stopwatch'></div>
+          <ul class='results'></ul>
       </div>
       <!--end column 1-->
 
@@ -69,8 +94,8 @@
         <h2>Try these:</h2>
         <hr>
         <button id="addButton" class="btn btn-primary">Add</button>
+        <button id="avgButton" class="btn btn-primary">Avg</button>
         <button id="getJokeButton" class="btn btn-success">Get Joke</button>
-        <button id="clicker" class="btn btn-indigo">Coming soon!</button>
         <hr>
         <p id="result"></p>
 
@@ -88,8 +113,6 @@
       <span class="text-muted">Right-click / Inspect / Console</span>
       &#9670;
       <a href="https://profcase.github.io/js-gui/">Demo</a>
-      &#9670;
-      <a href="https://github.com/profcase/js-gui">Source</a>
     </div>
   </footer>
 
