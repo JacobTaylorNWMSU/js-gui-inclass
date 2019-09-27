@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Interactive App</title>
+
+  <meta name="description" content="Interactive app">
+  <meta name="author" content="Denise Case">
+
+  <!-- get current Bootstrap Material Design styles from https://mdbootstrap.com/md-bootstrap-cdn/ -->
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/css/mdb.min.css" rel="stylesheet">
+
+  <!-- required for sticky footer -->
+  <style>
+    body,
+    .sticky-footer-wrapper {
+      min-height: 100vh;
+    }
+  </style>
+
+</head>
+
+<body class="d-flex flex-column sticky-footer-wrapper">
+  <!-- Bootstrap container or container-fluid (whole width) -->
+  <!-- https://getbootstrap.com/docs/4.0/layout/overview/ -->
+  <!-- margin top 5 ($spacer * 3) -->
+  <main class="container mt-5 flex-fill">
+
+    <!--Container has rows - first row -->
+    <div class="row">
+
+      <!--Rows have columns - column 1 (7/12) -->
+      <div class="col-md-7 mb-4">
+
+        <h2>Interactive app!</h2>
+        <hr>
+
+        <fieldset class="mt-4">
+          <label for="guest">Enter your name (2 to 40 characters):</label>
+          <input id="guest" type="text" minlength="2" maxlength="40" value="Lilly">
+        </fieldset>
+
+        <fieldset class="mt-4">
+          <label for="firstNumber">Enter first number (1 to 100):</label>
+          <input id="firstNumber" type="number" min="1" max="100" value=7>
+          <span id="firstWarning" class="text-danger"></span>
+        </fieldset>
+
+        <fieldset class="mt-4">
+          <label for="secondNumber">Enter second number (1 to 100):</label>
+          <input id="secondNumber" type="number" min="1" max="100" value="12">
+          <span id="secondWarning" class="text-danger"></span>
+        </fieldset>
+
+      </div>
+      <!--end column 1-->
+
+      <!--column 2 (5/12) -->
+      <div class="col-md-5 mb-4">
+        <h2>Try these:</h2>
+        <hr>
+        <button id="addButton" class="btn btn-primary">Add</button>
+        <button id="getJokeButton" class="btn btn-success">Get Joke</button>
+        <button id="clicker" class="btn btn-indigo">Coming soon!</button>
+        <hr>
+        <p id="result"></p>
+
+      </div>
+      <!-- end column 2-->
+
+    </div>
+    <!-- end row 1 -->
+
+  </main>
+
+  <!-- sticky footer with padding on y-axis (top and bottom) -->
+  <footer class="footer mt-auto py-3 bg-light">
+    <div class="container">
+      <span class="text-muted">Right-click / Inspect / Console</span>
+      &#9670;
+      <a href="https://profcase.github.io/js-gui/">Demo</a>
+      &#9670;
+      <a href="https://github.com/profcase/js-gui">Source</a>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/js/mdb.min.js"></script>
+  <script src="main.js"></script>
+
+</body>
+
+</html>
